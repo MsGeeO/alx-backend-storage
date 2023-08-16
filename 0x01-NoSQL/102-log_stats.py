@@ -29,7 +29,7 @@ def log_stats():
     print("IPs:")
     sorted_ips = logs_collection.aggregate(
         [{"$group": {"_id": "$ip", "count": {"$sum": 1}}},
-        {"$sort": {"count": -1}}])
+         {"$sort": {"count": -1}}])
     i = 0
     for s in sorted_ips:
         if i == 10:
